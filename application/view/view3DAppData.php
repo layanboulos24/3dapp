@@ -56,9 +56,6 @@
                     <h2><?php echo $data[$i]['modelTitle'] ?></h2>
                 </div>
                 <div class="boxText">
-                    <h2><?php echo $data[$i]['modelSubtitle'] ?></h2>
-                </div>
-                <div class="boxText">
                     <h2><?php echo $data[$i]['modelDescription'] ?></h2>
                 </div>
             </div>

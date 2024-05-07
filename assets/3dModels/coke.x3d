@@ -8,6 +8,9 @@
 	<meta name="source" content="Coke_can_camera+lights%205.wrl" />
 </head>
 <Scene>
+	<NavigationInfo  DEF="headlight" headlight="true" type='"EXAMINE"'/>
+    
+	<!-- CAMERAS -->
 	<Transform DEF="Camera_2"
 		translation="-4463.423828125 538.23370361328125 229.42172241210938"
 		rotation="-0.20458699762821198 0.6242709755897522 -0.75394302606582642 0.04175800085067749">
@@ -37,42 +40,42 @@
 			jump="false"
 			description="Camera" />
 	</Transform>
+	<!-- LIGHTS -->
 	<Transform DEF="Light_5">
 		<PointLight DEF="LIGHT_Light_5"
-			global="true"
+			
 			radius="100000000" />
 	</Transform>
 	<Transform DEF="Light_4"
 		translation="1049.635986328125 364.83389282226563 0">
-		<PointLight DEF="LIGHT_Light_4"
-			global="true"
-			radius="100000000" />
+		<PointLight DEF="LIGHT_Light_4" radius="100000000" />
 	</Transform>
 	<Transform DEF="Light_3"
 		translation="-1658.7603759765625 364.83389282226563 0">
 		<PointLight DEF="LIGHT_Light_3"
-			global="true"
+			
 			radius="100000000" />
 	</Transform>
 	<Transform DEF="Light_2"
 		translation="0 471.63421630859375 1357.0972900390625"
 		rotation="0 1 0 1.6474260091781616">
 		<PointLight DEF="LIGHT_Light_2"
-			global="true"
+			
 			radius="100000000" />
 	</Transform>
 	<Transform DEF="Light_1"
 		translation="0 471.63421630859375 -1556.154052734375">
 		<PointLight DEF="LIGHT_Light_1"
-			global="true"
+			
 			radius="100000000" />
 	</Transform>
 	<Transform DEF="Light"
 		translation="0 1698.9957275390625 0">
 		<PointLight DEF="LIGHT_Light"
-			global="true"
+			
 			radius="100000000" />
 	</Transform>
+	<!-- TEXTURE -->
 	<Transform DEF="Lathe"
 		rotation="0 1 0 3.0211520195007324">
 		<Shape>
@@ -82,7 +85,7 @@
 					specularColor="0.02500000037252903 0.02500000037252903 0.02500000037252903"
 					shininess="0.02500000037252903" />
 				<ImageTexture
-					url='../images/can_texture.jpg' />
+					url='/3dapp/assets/images/can_texture.png' />
 			</Appearance>
 			<IndexedFaceSet DEF="FACESET_Lathe"
 				ccw="false"

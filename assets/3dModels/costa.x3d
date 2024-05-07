@@ -97,7 +97,7 @@
 						specularColor="0.02500000037252903 0.02500000037252903 0.02500000037252903"
 						shininess="0.02500000037252903" />
 					<ImageTexture
-						url='"../images/costa.jpg"' />
+						url='/3dapp/assets/images/costa.png' />
 				</Appearance>
 				<IndexedFaceSet DEF="FACESET_cup"
 					ccw="false"

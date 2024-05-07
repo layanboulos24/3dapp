@@ -20,6 +20,11 @@ class Controller {
 		$data = $this->model->model3D_info();
 		$this->load->view('home', $data);
 	}
+
+	function apiCoke()
+	{
+		$this->load->view('coke');
+	}
 	
 	function dbCreateTable()
 	{
@@ -33,7 +38,8 @@ class Controller {
 
 	function dbGetData()
 	{
-		echo "Data Read Function";
+		$data = $this->model->getData();
+		$this->load->view('coke', $data);
 	}
 
 	function apiCreateTable()
@@ -53,11 +59,6 @@ class Controller {
 		$this->load->view('view3DAppData', $data);
 	}  
 
-	// Flickr API
-	function apiGetFlickrFeed()
-	{
-		$this->load->view('viewFlickrFeed');
-	}
 
 }
 ?>   

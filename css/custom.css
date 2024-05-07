@@ -53,11 +53,11 @@
 
 /* These next two CSS rules control the style of the icon bar */
 .navbar_coca_cola .navbar-toggler {
-    border-color: white;
+    border-color: black;
 }
 
 .navbar_coca_cola  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .navbar_coca_cola .navbar-toggler {
@@ -105,7 +105,7 @@
 
 .logo h1 {
     font-family: cocaColaFont; /* You don't need to repeat this for each media query as it is propagated */
-    font-size: 31px;
+    font-size: 36px;
     margin: 0;
     margin-top: -10px;
     margin-bottom: -15px;
@@ -117,7 +117,7 @@
 
 .logo h2 {
     font-family: cocaColaFont;
-    font-size: 31px;
+    font-size: 36px;
     margin-top: -6px;
     margin-bottom: -15px;
     padding-top: 0px;
@@ -127,7 +127,7 @@
 }
 
 .logo h3 {
-    font-size: 18px;
+    font-size: 23px;
     margin-top: 0px;
     margin-bottom: -5px;
     padding-top: 0px;
@@ -137,7 +137,7 @@
 
 .logo p {
     /* font-size: 7px; You may have to tweak this to get a good fit */
-    margin-top: 22px; /* You may have to tweak this to get a good fit */
+    margin-top: 27px; /* You may have to tweak this to get a good fit */
     margin-bottom: 0px;
     padding-top: 0px;
     padding-left: 3px;
@@ -199,6 +199,43 @@
  }
 
     
+/* coke page */
+.coke {
+    display: inline-block;
+    flex-wrap: wrap;
+    align-items: center; 
+    text-align: center; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.coke h1 {
+    font-family: cocaColaFont; /* You don't need to repeat this for each media query as it is propagated */
+    font-size: 44px;
+    margin: 0;
+    margin-top: -10px;
+    margin-bottom: -15px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 2px;
+    display: inline-block;
+    
+}
+
+.coke h2 {
+    font-family: cocaColaFont;
+    font-size: 45px;
+    margin-top: -6px;
+    margin-bottom: -15px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 3px;
+    display: inline-block;
+   
+}
+
 
 /* Some simple CSS rules for styling p, h1 to h6, etc. in the main content’s container */
 p {
@@ -256,7 +293,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .navbar-text > p {
-        color: rgb(255, 255, 255);
         font-size: 10px;
         text-decoration: none;
     }
@@ -305,7 +341,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .navbar-text > p {
-        color: rgb(255, 255, 255);
         font-size: 14px;
         text-decoration: none;
     }
@@ -352,7 +387,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .navbar-text > p {
-        color: rgb(255, 255, 255);
         font-size: 14px;
         text-decoration: none;
     }
@@ -394,7 +428,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .navbar-text > p {
-        color: rgb(255, 255, 255);
         font-size: 18px;
         text-decoration: none;
     }

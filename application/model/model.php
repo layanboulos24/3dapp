@@ -20,7 +20,7 @@ class Model {
 				// echo 'Database connection created</br></br>';
 			}
 			catch (PDOEXception $e) {
-				echo "I'm sorry, Martin. I'm afraid I can't connect to the database!";
+				echo "I'm sorry. I'm afraid I can't connect to the database!";
 				// Generate an error message if the connection fails
 				print new Exception($e->getMessage());
 			}
@@ -29,7 +29,7 @@ class Model {
 		public function dbCreateTable()
 		{
 			try {
-				$this->dbhandle->exec("CREATE TABLE Model_3D (Id INTEGER PRIMARY KEY, x3dModelTitle TEXT, x3dCreationMethod TEXT, modelTitle TEXT, modelSubtitle TEXT, modelDescription TEXT)");
+				$this->dbhandle->exec("CREATE TABLE Model_3D (Id INTEGER PRIMARY KEY, x3dModelTitle TEXT, x3dCreationMethod TEXT, modelTitle TEXT, modelDescription TEXT)");
 				return "Model_3D table is successfully created inside test1.db file";
 			}
 			catch (PD0EXception $e){
@@ -37,25 +37,44 @@ class Model {
 			}
 			$this->dbhandle = NULL;
 		}
-		
+	
 		public function dbInsertData()
 		{
-			try{
+			try {
 				$this->dbhandle->exec(
-				"INSERT INTO Model_3D (Id, x3dModelTitle, x3dCreationMethod, modelTitle, modelSubtitle, modelDescription) 
-					VALUES (1, 'X3D Coke Model', 'string_2', 'string_3','string_4','string_5'); " .
-				"INSERT INTO Model_3D (Id, x3dModelTitle, x3dCreationMethod, modelTitle, modelSubtitle, modelDescription) 
-					VALUES (2, 'X3D Sprite Model', 'string_2', 'string_3','string_4','string_5'); " .
-				"INSERT INTO Model_3D (Id, x3dModelTitle, x3dCreationMethod, modelTitle, modelSubtitle, modelDescription) 
-					VALUES (3, 'X3D Pepper Model', 'string_2', 'string_3','string_4','string_5'); ");
+					"INSERT INTO Model_3D (x3dModelTitle, x3dCreationMethod, modelTitle, modelDescription) 
+					VALUES (
+						'X3D Coke Model',
+						'This X3D model of the coke can has been created in Cinema4D, exported to VRML97 and converted, using the view3dscene, to X3D for display online.',
+						'History of Coca Cola',
+						'It was 1886, and in New York Harbour, workers were constructing the Statue of Liberty. Eight hundred miles away, another great American symbol was about to be unveiled. Like many people who change history, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, he carried it a few doors down to Jacobs Pharmacy. Here, the mixture was combined with carbonated water and sampled by customers who all agreed - this new drink was something special. So Jacobs Pharmacy put it on sale for five cents (about 3p) a glass.'
+					); " .
+					
+					"INSERT INTO Model_3D (x3dModelTitle, x3dCreationMethod, modelTitle, modelDescription) 
+					VALUES (
+						'X3D Fanta Model', 
+						'This X3D model of the Fanta glass bottle has been created in Cinema4D, exported to VRML97 and converted, using the view3dscene, to X3D for display online.', 
+						'History of Fanta',
+						'Fanta was created by the Coca-Cola Company during World War II when it couldnt import Coca-Cola syrup into Nazi Germany due to trade restrictions. The German Coca-Cola team came up with a new soda using available ingredients, including leftovers from fruit processing, and called it Fanta. After the war, Fanta production continued, evolving into various flavors and becoming a global brand under Coca-Cola. Today, its one of the most popular soft drinks worldwide.'
+					); " .
+
+					"INSERT INTO Model_3D (x3dModelTitle, x3dCreationMethod, modelTitle, modelDescription) 
+					VALUES (
+						'X3D Costa', 
+						'This X3D model of the Costa Coffee take away bottle has been created in Cinema4D, exported to VRML97 and converted, using the view3dscene, to X3D for display online.', 
+						'History of Costa Coffee',
+						'Costa Coffee was founded in London in 1971 by Italian brothers Sergio and Bruno Costa. Originally, they operated as a wholesale operation supplying roasted coffee to caterers and specialty shops. In 1978, they opened their first café in Vauxhall Bridge Road, London. Over the years, Costa expanded its café chain across the UK and internationally. In 1995, Costa was acquired by Whitbread PLC, which helped accelerate its growth. Costa Coffee became one of the largest coffee shop chains globally before being acquired by The Coca-Cola Company in 2019'
+					);"
+				);
+
 				return "X3D model data inserted successfully inside test1.db";
-			}
-			catch(PD0EXception $e) {
-				print new Exception($e->getMessage());
+			} catch (PDOException $e) {
+				return "Error inserting data: " . $e->getMessage();
 			}
 			$this->dbhandle = NULL;
 		}
-	
+
+
 		public function dbGetData(){
 			try{
 				// Prepare a statement to get all records from the Model_3D table
@@ -75,7 +94,6 @@ class Model {
 					$result[$i]['x3dModelTitle'] = $data['x3dModelTitle'];
 					$result[$i]['x3dCreationMethod'] = $data['x3dCreationMethod'];
 					$result[$i]['modelTitle'] = $data['modelTitle'];
-					$result[$i]['modelSubtitle'] = $data['modelSubtitle'];
 					$result[$i]['modelDescription'] = $data['modelDescription'];
 					//increment the row index
 					$i++;
@@ -121,5 +139,112 @@ class Model {
 			'image_1' => 'coke_brands',
 		);
 	}
+
+	public function getData(){
+		return [
+			'coke' => $this->getCokeData(),
+			'fanta' => $this->getFantaData(),
+			'costa' => $this->getCostaData(),
+		];
+	}
+
+	private function getCokeData() {
+		try {
+			// Set up the database source name (DSN)
+			$dsn = 'sqlite:/3dapp/db/test1.db';
+			
+			// Create a new PDO instance for database connection
+			$dbhandle = new PDO($dsn, 'user', 'password', array(
+				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+				PDO::ATTR_EMULATE_PREPARES => false,
+			));
+			
+			// Prepare a SQL query to retrieve data for Coke
+			$stmt = $dbhandle->prepare("SELECT * FROM Model_3D WHERE x3dModelTitle = 'X3D Coke Model'");
+			
+			// Execute the query
+			$stmt->execute();
+			
+			// Fetch the result as an associative array
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+			var_dump($result);
+			
+			// Close the database connection
+			$dbhandle = null;
+			
+			// Return the retrieved data
+			
+			return $result;
+		} catch (PDOException $e) {
+			print new Exception($e->getMessage());
+			return null;
+		}
+	}
+
+	private function getFantaData() {
+		try {
+			// Set up the database source name (DSN)
+			$dsn = 'sqlite:./db/test1.db';
+			
+			// Create a new PDO instance for database connection
+			$dbhandle = new PDO($dsn, 'user', 'password', array(
+				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+				PDO::ATTR_EMULATE_PREPARES => false,
+			));
+			
+			// Prepare a SQL query to retrieve data for Coke
+			$stmt = $dbhandle->prepare("SELECT * FROM Model_3D WHERE x3dModelTitle = 'X3D Fanta Model'");
+			
+			// Execute the query
+			$stmt->execute();
+			
+			// Fetch the result as an associative array
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+			
+			// Close the database connection
+			$dbhandle = null;
+			
+			// Return the retrieved data
+			return $result;
+		} catch (PDOException $e) {
+			// Handle any exceptions
+			// You might want to log the error or return an error message
+			return null;
+		}
+
+	}
+
+	private function getCostaData() {
+		try {
+			// Set up the database source name (DSN)
+			$dsn = 'sqlite:./db/test1.db';
+			
+			// Create a new PDO instance for database connection
+			$dbhandle = new PDO($dsn, 'user', 'password', array(
+				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+				PDO::ATTR_EMULATE_PREPARES => false,
+			));
+			
+			// Prepare a SQL query to retrieve data for Coke
+			$stmt = $dbhandle->prepare("SELECT * FROM Model_3D WHERE x3dModelTitle = 'X3D Costa Model'");
+			
+			// Execute the query
+			$stmt->execute();
+			
+			// Fetch the result as an associative array
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+			
+			// Close the database connection
+			$dbhandle = null;
+			
+			// Return the retrieved data
+			return $result;
+		} catch (PDOException $e) {
+			// Handle any exceptions
+			// You might want to log the error or return an error message
+			return null;
+		}
+	}
 }
+
 ?>
