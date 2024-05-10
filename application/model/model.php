@@ -109,36 +109,7 @@ class Model {
 		}
 		
 	//Method to simulate the model data
-	public function model3D_info()
-	{
-		// Simulate the model's data
-		return array(
-			'model_1' => 'Coke Can 3D Image 1',
-			'image3D_1' => 'can_texture',
-
-			'model_2' => 'Coke Can 3D Image 2',
-			'image3D_2' => 'coca_cola',
-
-			'model_3' => 'Fanta Bottle 3D Image 1',
-			'image3D_3' => 'fanta_image',
-
-			'model_4' => 'Fanta Bottle 3D Image 2',
-			'image3D_4' => 'fanta',
-
-			'model_5' => 'Costa Cup 3D Image 1',
-			'image3D_5' => 'costa_logo',
-
-			'model_6' => 'Dr Pepper Cup 3D Image 2',
-			'image3D_6' => 'costa'
-		);
-	}
-
-	public function home_images()
-	{
-		return array(
-			'image_1' => 'coke_brands',
-		);
-	}
+	
 
 	public function getData(){
 		return [
@@ -152,7 +123,7 @@ class Model {
 	private function getCokeData() {
 		try {
 			// Set up the database source name (DSN)
-			$dsn = 'sqlite:/3dapp/db/test1.db';
+			$dsn = 'sqlite:/~lb768/3dapp/db/test1.db';
 			
 			// Create a new PDO instance for database connection
 			$dbhandle = new PDO($dsn, 'user', 'password', array(

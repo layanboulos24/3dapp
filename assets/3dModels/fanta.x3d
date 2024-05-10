@@ -20,7 +20,7 @@
 						specularColor="0.02500000037252903 0.02500000037252903 0.02500000037252903"
 						shininess="0.02500000037252903" />
 					<ImageTexture
-						url='"/3dapp/assets/images/fanta.png"' />
+						url='"/3dapp/assets/images/textures/fanta.png"' />
 				</Appearance>
 				<IndexedFaceSet DEF="FACESET_Tube"
 					ccw="false"
