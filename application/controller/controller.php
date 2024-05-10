@@ -39,7 +39,7 @@ class Controller {
 	function dbGetData()
 	{
 		$data = $this->model->getData();
-		$this->load->view('coke', $data);
+		echo json_encode($data);
 	}
 
 	function apiCreateTable()
@@ -53,10 +53,10 @@ class Controller {
 		$data = $this->model->dbInsertData();
 	   	$this->load->view('viewMessage', $data);
 	}  
-	function apiGetData()
+	function apiModels()
 	{
 		$data = $this->model->dbGetData();
-		$this->load->view('view3DAppData', $data);
+		$this->load->view('coke', $data);
 	}  
 
 

@@ -77,19 +77,19 @@ class Model {
 
 		public function dbGetData(){
 			try{
-				// Prepare a statement to get all records from the Model_3D table
+				
 				$sql = 'SELECT * FROM Model_3D';
-				// Use PDO query() to query the database with the prepared SQL statement
+				
 				$stmt = $this->dbhandle->query($sql);
-				// Set up an array to return the results to the view
+				
 				$result = null;
-				// Set up a variable to index each row of the array
+				
 				$i=-0;
-				// Use PDO fetch() to retrieve the results from the database using a while loop
-				// Use a while loop to loop through the rows	
+					
 				while ($data = $stmt->fetch()) {
 					// Don't worry about this, it's just a simple test to check we can output a value from the database in a while loop
 					// echo '</br>' . $data['x3dModelTitle'];
+					
 					// Write the database conetnts to the results array for sending back to the view
 					$result[$i]['x3dModelTitle'] = $data['x3dModelTitle'];
 					$result[$i]['x3dCreationMethod'] = $data['x3dCreationMethod'];
@@ -146,6 +146,7 @@ class Model {
 			'fanta' => $this->getFantaData(),
 			'costa' => $this->getCostaData(),
 		];
+	
 	}
 
 	private function getCokeData() {
@@ -167,7 +168,7 @@ class Model {
 			
 			// Fetch the result as an associative array
 			$result = $stmt->fetch(PDO::FETCH_ASSOC);
-			var_dump($result);
+
 			
 			// Close the database connection
 			$dbhandle = null;

@@ -10,6 +10,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/3dapp/css/bootstrap.css">
     <link rel="stylesheet" href="/3dapp/css/custom.css">
+    <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script> 
+    <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
 </head>
 <body>
      <!-- Navbar -->

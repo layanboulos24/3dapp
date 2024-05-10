@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/3dapp/css/custom.css">
     <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script> 
     <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
+    <link rel="stylesheet" type="text/css" href="/3dapp/css/jquery.fancybox.min.css">
 </head>
 <body>
      <!-- Navbar -->
@@ -50,51 +51,75 @@
         </div>
       </div>
     </nav>
-    <div class="text-center coke container d-flex justify-content-center">
-      <div class="text-danger text-centre coke container-fluid" id="coke">
-          <h1>1</h1>
-          <h1>oca</h1>
-          <h2>Cola</h2>
-          </a>
-      </div>
+    <div class="text-center container d-flex justify-content-center" style="height: 150px;">
+        <div class="text-danger text-centre coke container-fluid" id="coke" style="display: block; text-align: center; vertical-align: middle; line-height: 150px;">
+            <h1>1</h1> 
+            <h1>oca</h1>
+            <h2>Cola</h2>
+            </a>
+            
+        </div>
+        <div class="container-fluid" id="fanta"  style="display: none;">
+          <img src="/3dapp/assets/images/fantaLogo.png" width="200" height="150"/>
+        </div>
+        <div class="container-fluid" id="costa"  style="display: none;">
+          <img src="/3dapp/assets/images/costa_logo.png" width="200" height="150"/>
+        </div>
     </div>
     <div class="container  justify-content-center ">
       <div class="row">
         <div class="col-6 card">
           <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
-              <li class="nav-item">
-                <a class="nav-link active" onmouseup="cokeScene()">Coke</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " onmouseup="fantaScene();">Fanta</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " onmouseup="costaScene();">Costa</a>
-              </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="cokeTab" onmouseup="cokeScene()">Coke</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="fantaTab" onmouseup="fantaScene();">Fanta</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="costaTab" onmouseup="costaScene();">Costa</a>
+            </li>
             </ul>
           </div>
           <div class="card-body">
-            <h4 class="card-title">Coke Can</h4>
+            <div class="card-title">
+              <Switch whichChoice="0" id='modelTitleSwitch'>
+                  <?php echo "<h4 style=' display:block;' id='modelTitle_0'>" . $data[0]['x3dModelTitle'] . "</h4>"?>
+                  <?php echo "<h4 style='display:none;' id='modelTitle_1'>" . $data[1]['x3dModelTitle'] . "</h4>"?>
+                  <?php echo "<h4 style='display:none;' id='modelTitle_2'>" . $data[2]['x3dModelTitle'] . "</h4>"?>
+                </Switch>
+            </div>
             <div id="container" class="model3D">
-              <x3d id="myX3D" width="700px" height= "500px"> 
+              <x3d id="cokeX3D" width="500px" height= "500px" > 
                 <scene>
-                  <!-- <inline url="/3dapp/assets/3dModels/coke.x3d"> </inline>  -->
-                  <Switch whichChoice="0" id='SceneSwitch'>
                     <transform>
-                      <inline nameSpaceName="model" mapDEFToID="true" url="/3dapp/assets/3dModels/coke.x3d"></inline>
+                      <inline nameSpaceName="cokeX3D" mapDEFToID="true" url="/3dapp/assets/3dModels/coke.x3d" onclick="spin()"></inline>
                     </transform>
+                </scene> 
+              </x3d>
+              <x3d id="fantaX3D" width="500px" height= "500px" class="hidden"> 
+                <scene>
                     <transform>
-                      <inline nameSpaceName="model" mapDEFToID="true" url="/3dapp/assets/3dModels/fanta.x3d"></inline>
+                      <inline nameSpaceName="fantaX3D" mapDEFToID="true" url="/3dapp/assets/3dModels/fanta.x3d" onclick="spin()"></inline>
                     </transform>
+                </scene> 
+              </x3d>
+              <x3d id="costaX3D" width="500px" height= "500px" class="hidden"> 
+                <scene>
                     <transform>
-                      <inline nameSpaceName="model" mapDEFToID="true" url="/3dapp/assets/3dModels/costa.x3d"></inline>
+                      <inline nameSpaceName="costaX3D" mapDEFToID="true" url="/3dapp/assets/3dModels/costa.x3d" onclick="spin()"></inline>
                     </transform>
-                  </Switch>
                 </scene> 
               </x3d>
             </div>
-            <div id="x3dCreationMethod_coke"><?php echo $data['coke']['x3dCreationMethod']; ?></div>
+            <div id="x3dCreationMethod_coke">
+              <Switch whichChoice="0" id='methodSwitch'>
+                <?php echo "<p style=' display:block;' id='method_0'>" . $data[0]['x3dCreationMethod'] . "</p>"?>
+                <?php echo "<p style=' display:none;' id='method_1'>" . $data[1]['x3dCreationMethod'] . "</p>"?>
+                <?php echo "<p style=' display:none;' id='method_2'>" . $data[2]['x3dCreationMethod'] . "</p>"?>
+              </Switch>
+            </div>
            
           </div>
         </div>
@@ -108,10 +133,10 @@
                   <p>Camera Views</p>
                 </div>
                 <div class="card-body">
-                  <a href="#" class="btn">Default</a>
-                  <a href="#" class="btn">Back</a>
-                  <a href="#" class="btn">Left</a>
-                  <a href="#" class="btn">Right</a>
+                  <a href="#" class="btn" onclick="cameraFront()">Default</a>
+                  <a href="#" class="btn" onclick="cameraLeft()">Left</a>
+                  <a href="#" class="btn" onclick="cameraRight()">Right</a>
+                  <a href="#" class="btn" onclick="cameraTop()">Top</a>
                 </div>
               </div>
           </div>
@@ -122,9 +147,12 @@
                 </div>  
                 <div class="card-body">
                   <a href="#" class="btn" onclick="toggleWireFrame()">Wire</a>
-                  <a href="#" class="btn">Back</a>
-                  <a href="#" class="btn">Left</a>
-                  <a href="#" class="btn">Right</a>
+                  <a href="#" class="btn" onclick="light1()">Light 1</a>
+                  <a href="#" class="btn" onclick="light2()">Light 2</a>
+                  <a href="#" class="btn" onclick="light3()">Light 3</a>
+                  <a href="#" class="btn" onclick="light4()">Light 4</a>
+                  <a href="#" class="btn" onclick="light5()">Light 5</a>
+                  <a href="#" class="btn" onclick="turnOffAllLights()">Turn off all lights</a>
                 </div>
               </div>
             </div>
@@ -134,10 +162,8 @@
                   <p>Animation</p>
                 </div>
                 <div class="card-body">
-                  <a href="#" class="btn">Animate</a>
-                  <a href="#" class="btn">Rotate Left</a>
-                  <a href="#" class="btn">Rotate Right</a>
-                  <a href="#" class="btn">Stop</a>
+                  <a href="#" class="btn" onclick="spin()">Animate</a>
+                  <a href="#" class="btn" onclick="stopAnimation()">Stop</a>
                 </div>
               </div>
             </div>
@@ -145,51 +171,39 @@
         </div>
       </div>
       <div class="row">
-        <div class=" col card">
+        <div class=" col-11 card">
           <div class="card-title">
-            <div id="title_coke" class="drinksText"></div>
-            <div id="title_fanta" class="drinksText"></div>
-            <div id="title_costa" class="drinksText"></div>
-            
+            <Switch whichChoice="0" id='TitleSwitch'>
+              <?php echo "<h4 style='display:block;' id='title_0' class='m-3'>" . $data[0]['modelTitle'] . "</h4>"?>
+              <?php echo "<h4 style='display:none;' id='title_1' class='m-3'>" . $data[1]['modelTitle'] . "</h4>"?>
+              <?php echo "<h4 style='display:none;' id='title_2' class='m-3'>" . $data[2]['modelTitle'] . "</h4>"?>
+            </Switch>
+              
           <div class="card-body">
-            <div id="description_coke">
-            <div id="description_fanta">
-            <div id="description_costa">
+            <Switch whichChoice="0" id='descriptionSwitch'>
+              <?php echo "<p style='display:block;' id='description_0'>" . $data[0]['modelDescription'] . "</p>"?>
+              <?php echo "<p style='display:none;' id='description_1'>" . $data[1]['modelDescription'] . "</p>"?>
+              <?php echo "<p style='display:none;' id='description_2'>" . $data[2]['modelDescription'] . "</p>"?>
+            </Switch>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class=" col card">
+        <div class=" col-11 card">
           <div class="card-header">
             Gallery
           </div>
           <div class="card-body">
+            <div class="gallery" id="gallery"></div>
           </div>
         </div>
       </div>
     <div>
     <script> 
-      var spinning = false;
 
-      function toggleWireFrame(){
-        var x3dElement = document.getElementById('myX3D');
-       
-        x3dElement.runtime.togglePoints(true);
-        x3dElement.runtime.togglePoints(true);
-      }
 
-      function toggleSpin() {
-        spinning = !spinning;
-        document.getElementById('myX3D__RotationTimer').setAttribute('enabled', spinning.toString());
-        
-      }
-      var lightOn = true;
+      
 
-      function headlight()
-      {
-        lightOn = !lightOn;
-        document.getElementById('myX3D__headlight').setAttribute('headlight', lightOn.toString());
-      }
     </script>
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootsrap Js -->
@@ -200,6 +214,9 @@
     <script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script>
     <script src="/3dapp/js/modelInteractions.js"></script>
     <script src="/3dapp/js/swapContents.js"></script>
+    <script src="/3dapp/js/jquery.fancybox.min.js"></script>
+    <script src="/3dapp/js/gallery_generator.js"></script>
     <!-- <script src="/3dapp/js/getJsonData.js"></script> -->
+
 </body>
 </html>

@@ -16,6 +16,16 @@
     src: url(../assets/fonts/Oswald/static/Oswald-Regular.ttf);
 }
 
+.galleryImages {
+    width: 325px;
+    height: 200px;
+}
+
+/* x3d scenes */
+.hidden {
+    display:none;
+}
+
 .carousel-inner .item a img {
 
     margin: auto;
