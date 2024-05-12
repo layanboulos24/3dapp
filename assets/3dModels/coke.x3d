@@ -89,7 +89,7 @@
 					specularColor="0.02500000037252903 0.02500000037252903 0.02500000037252903"
 					shininess="0.02500000037252903" />
 				<ImageTexture
-					url='"/3dapp/assets/images/textures/can_texture.png"' />
+					url='"/~lb768/3dapp/assignment/assets/images/textures/can_texture.png"' />
 			</Appearance>
 			<IndexedFaceSet DEF="FACESET_Lathe"
 				ccw="false"

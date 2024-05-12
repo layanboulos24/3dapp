@@ -1,13 +1,15 @@
 <?php 
-    $document_root = $_SERVER['DOCUMENT_ROOT'];
-    $relative_path = '/3dapp/assets/images/gallery_images';
-    $directory = $document_root . $relative_path;
-    $imagePath = '/3dapp/assets/images/gallery_images';
+
+
+    $directory = '/its/home/lb768/public_html/3dapp/assignment/assets/images/gallery_images/';
+   
+    $imagePath = 'lb768/3dapp/assignment/assets/images/gallery_images';
     $allowed_extensions = array('jpg','jpeg','gif','png');
     $file_parts = array();
     $response = "";
+    
     $dir_handle = opendir($directory);
-
+    
     if ($dir_handle) {
         while ($file = readdir($dir_handle)) {
             

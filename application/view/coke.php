@@ -8,12 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/3dapp/css/bootstrap.css">
-  <link rel="stylesheet" href="/3dapp/css/custom.css">
-  <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script>
-  <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'>
+  <link rel="stylesheet" href="/~lb768/3dapp/assignment/css/bootstrap.css">
+  <link rel="stylesheet" href="/~lb768/3dapp/assignment/css/custom.css">
+   
+  <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'>
   </link>
-  <link rel="stylesheet" type="text/css" href="/3dapp/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" type="text/css" href="/~lb768/3dapp/assignment/css/jquery.fancybox.min.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
   <nav class="navbar sticky-top navbar-expand-sm navbar_coca_cola" style="background-color: white;">
     <div class="container-fluid">
       <div class="logo text-danger">
-        <a class="navbar-brand text-danger link-dark" href="/3dapp/">
+        <a class="navbar-brand text-danger link-dark" href="/~lb768/3dapp/assignment/">
           <h1>1</h1>
           <h1>oca</h1>
           <h2>Cola</h2>
@@ -36,13 +36,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item m-1">
-            <a class="nav-link text-danger" href="/3dapp/">Home</a>
+            <a class="nav-link text-danger" href="/~lb768/3dapp/assignment/">Home</a>
           </li>
           <li class="nav-item m-1">
             <a class="nav-link text-danger link-dark" onclick="openAbout()">About</a>
           </li>
           <li class="nav-item m-1 dropdown">
-            <a class="nav-link text-danger link-dark" href="/3dapp/index.php/apiModels" role="button" d>Models</a>
+            <a class="nav-link text-danger link-dark" href="/~lb768/3dapp/assignment/index.php/apiModels" role="button" d>Models</a>
           </li>
         </ul>
       </div>
@@ -60,10 +60,10 @@
 
     </div>
     <div class="container-fluid" id="fanta" style="display: none;">
-      <img src="/3dapp/assets/images/logos/fantaLogo.png" width="200" height="150" />
+      <img src="/~lb768/3dapp/assignment/assets/images/logos/fantaLogo.png" width="200" height="150" />
     </div>
     <div class="container-fluid" id="costa" style="display: none;">
-      <img src="/3dapp/assets/images/logos/costa_logo.png" width="200" height="150" />
+      <img src="/~lb768/3dapp/assignment//assets/images/logos/costa_logo.png" width="200" height="150" />
     </div>
   </div>
   <div class="container  justify-content-center ">
@@ -95,7 +95,7 @@
               <x3d id="cokeX3D" width="500px" height="500px">
                 <scene>
                   <transform>
-                    <inline nameSpaceName="cokeX3D" mapDEFToID="true" url="/3dapp/assets/3dModels/coke.x3d"
+                    <inline nameSpaceName="cokeX3D" mapDEFToID="true" url="/~lb768/3dapp/assignment/assets/3dModels/coke.x3d"
                       onclick="spin()"></inline>
                   </transform>
                 </scene>
@@ -103,7 +103,7 @@
               <x3d id="fantaX3D" width="500px" height="500px" class="hidden">
                 <scene>
                   <transform>
-                    <inline nameSpaceName="fantaX3D" mapDEFToID="true" url="/3dapp/assets/3dModels/fanta.x3d"
+                    <inline nameSpaceName="fantaX3D" mapDEFToID="true" url="/~lb768/3dapp/assignment/assets/3dModels/fanta.x3d"
                       onclick="spin()"></inline>
                   </transform>
                 </scene>
@@ -111,7 +111,7 @@
               <x3d id="costaX3D" width="500px" height="500px" class="hidden">
                 <scene>
                   <transform>
-                    <inline nameSpaceName="costaX3D" mapDEFToID="true" url="/3dapp/assets/3dModels/costa.x3d"
+                    <inline nameSpaceName="costaX3D" mapDEFToID="true" url="/~lb768/3dapp/assignment/assets/3dModels/costa.x3d"
                       onclick="spin()"></inline>
                   </transform>
                 </scene>
@@ -232,7 +232,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootsrap Js -->
-    <script src="/3dapp/js/jquery-3.5.1.js"></script>
+    <script src="/~lb768/3dapp/assignment/js/jquery-3.5.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -241,10 +241,12 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script>
-    <script src="/3dapp/js/modelInteractions.js"></script>
-    <script src="/3dapp/js/jquery.fancybox.min.js"></script>
-    <script src="/3dapp/js/gallery_generator.js"></script>
-    <script src="/3dapp/js/navBar.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'></script>
+    <script src="/~lb768/3dapp/assignment/js/modelInteractions.js"></script>
+    <script src="/~lb768/3dapp/assignment/js/jquery.fancybox.min.js"></script>
+    <script src="/~lb768/3dapp/assignment/js/gallery_generator.js"></script>
+    <script src="/~lb768/3dapp/assignment/js/navBar.js"></script>
+   
 
 </body>
 

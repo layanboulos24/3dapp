@@ -16,8 +16,8 @@ class Model {
 															PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 															PDO::ATTR_EMULATE_PREPARES => false,
 															));
-				// $this->dbhandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				// echo 'Database connection created</br></br>';
+
+			
 			}
 			catch (PDOEXception $e) {
 				echo "I'm sorry. I'm afraid I can't connect to the database!";
@@ -122,17 +122,10 @@ class Model {
 
 	private function getCokeData() {
 		try {
-			// Set up the database source name (DSN)
-			$dsn = 'sqlite:/~lb768/3dapp/db/test1.db';
 			
-			// Create a new PDO instance for database connection
-			$dbhandle = new PDO($dsn, 'user', 'password', array(
-				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-				PDO::ATTR_EMULATE_PREPARES => false,
-			));
 			
 			// Prepare a SQL query to retrieve data for Coke
-			$stmt = $dbhandle->prepare("SELECT * FROM Model_3D WHERE x3dModelTitle = 'X3D Coke Model'");
+			$stmt = $this->dbhandle->prepare("SELECT * FROM Model_3D WHERE x3dModelTitle = 'X3D Coke Model'");
 			
 			// Execute the query
 			$stmt->execute();
@@ -155,17 +148,10 @@ class Model {
 
 	private function getFantaData() {
 		try {
-			// Set up the database source name (DSN)
-			$dsn = 'sqlite:./db/test1.db';
 			
-			// Create a new PDO instance for database connection
-			$dbhandle = new PDO($dsn, 'user', 'password', array(
-				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-				PDO::ATTR_EMULATE_PREPARES => false,
-			));
 			
 			// Prepare a SQL query to retrieve data for Coke
-			$stmt = $dbhandle->prepare("SELECT * FROM Model_3D WHERE x3dModelTitle = 'X3D Fanta Model'");
+			$stmt = $this->dbhandle->prepare("SELECT * FROM Model_3D WHERE x3dModelTitle = 'X3D Fanta Model'");
 			
 			// Execute the query
 			$stmt->execute();
@@ -188,17 +174,9 @@ class Model {
 
 	private function getCostaData() {
 		try {
-			// Set up the database source name (DSN)
-			$dsn = 'sqlite:./db/test1.db';
-			
-			// Create a new PDO instance for database connection
-			$dbhandle = new PDO($dsn, 'user', 'password', array(
-				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-				PDO::ATTR_EMULATE_PREPARES => false,
-			));
-			
+		
 			// Prepare a SQL query to retrieve data for Coke
-			$stmt = $dbhandle->prepare("SELECT * FROM Model_3D WHERE x3dModelTitle = 'X3D Costa Model'");
+			$stmt = $this->dbhandle->prepare("SELECT * FROM Model_3D WHERE x3dModelTitle = 'X3D Costa Model'");
 			
 			// Execute the query
 			$stmt->execute();

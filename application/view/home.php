@@ -8,12 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/3dapp/css/bootstrap.css">
-    <link rel="stylesheet" href="/3dapp/css/custom.css">
-    <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script> 
-    <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
-    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">
-    <script src="js/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="/~lb768/3dapp/assignment/css/bootstrap.css">
+    <link rel="stylesheet" href="/~lb768/3dapp/assignment/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/~lb768/3dapp/assignment/css/jquery.fancybox.min.css">
+
 </head>
 <body>
     <div id="overlay" class="overlay" style="display: none;"></div>
@@ -21,7 +19,7 @@
      <nav class="navbar sticky-top navbar-expand-sm navbar_coca_cola" style="background-color: white;">
       <div class="container-fluid">
         <div class="logo text-danger">
-          <a class="navbar-brand text-danger link-dark" href="/3dapp/">
+          <a class="navbar-brand text-danger link-dark" href="/~lb768/3dapp/assignment/">
           <h1>1</h1>
           <h1>oca</h1>
           <h2>Cola</h2>
@@ -36,13 +34,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item m-1">
-              <a class="nav-link active" href="/3dapp/">Home</a>
+              <a class="nav-link active" href="/~lb768/3dapp/assignment/">Home</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link text-danger link-dark" onclick="openAbout()">About</a>
             </li>
             <li class="nav-item m-1 dropdown">
-              <a class="nav-link text-danger link-dark" href="/3dapp/index.php/apiModels" role="button" d>Models</a>
+              <a class="nav-link text-danger link-dark" href="/~lb768/3dapp/assignment/index.php/apiModels" role="button" d>Models</a>
             </li>
           </ul>
         </div>
@@ -52,15 +50,15 @@
     <div class="container">
       <div class="row">
         <div class="card rounded img-thumbnail mx-auto mt-5 shadow-sm col-12" id="slideshow" style="max-width: 95%;">
-          <img src="/3dapp/assets/images/home/coke_brands/coke_brands_0.jpg" alt="Coke can">
-          <img src="/3dapp/assets/images/home/coke_brands/coke_brands_1.jpg" alt="Coke can">
-          <img src="/3dapp/assets/images/home/coke_brands/coke_brands_2.jpg" alt="Coke can">
-          <img src="/3dapp/assets/images/home/coke_brands/coke_brands_3.jpg" alt="Coke can">
-          <img src="/3dapp/assets/images/home/coke_brands/coke_brands_4.jpg" alt="Coke can">
-          <img src="/3dapp/assets/images/home/coke_brands/coke_brands_5.jpg" alt="Coke can">
-          <img src="/3dapp/assets/images/home/coke_brands/coke_brands_6.jpg" alt="Coke can">
-          <img src="/3dapp/assets/images/home/coke_brands/coke_brands_7.jpg" alt="Coke can">
-          <img src="/3dapp/assets/images/home/coke_brands/coke_brands.jpeg" alt="Coke can">  
+          <img src="/~lb768/3dapp/assignment/assets/images/home/coke_brands/coke_brands_0.jpg" alt="Coke can">
+          <img src="/~lb768/3dapp/assignment/assets/images/home/coke_brands/coke_brands_1.jpg" alt="Coke can">
+          <img src="/~lb768/3dapp/assignment/assets/images/home/coke_brands/coke_brands_2.jpg" alt="Coke can">
+          <img src="/~lb768/3dapp/assignment/assets/images/home/coke_brands/coke_brands_3.jpg" alt="Coke can">
+          <img src="/~lb768/3dapp/assignment/assets/images/home/coke_brands/coke_brands_4.jpg" alt="Coke can">
+          <img src="/~lb768/3dapp/assignment/assets/images/home/coke_brands/coke_brands_5.jpg" alt="Coke can">
+          <img src="/~lb768/3dapp/assignment/assets/images/home/coke_brands/coke_brands_6.jpg" alt="Coke can">
+          <img src="/~lb768/3dapp/assignment/assets/images/home/coke_brands/coke_brands_7.jpg" alt="Coke can">
+          <img src="/~lb768/3dapp/assignment/assets/images/home/coke_brands/coke_brands.jpeg" alt="Coke can">  
         </div>
       </div>
     </div>
@@ -70,7 +68,7 @@
         <div class="col-md-6 mb-3 mb-md-0">
             <div class="card rounded mx-auto shadow-sm"  style="background-color: white;">
               
-                <img class="card-img-top" src="/3dapp/assets/images/home/extra/cocacolaCompany.png" alt="Coca-Cola Company">
+                <img class="card-img-top" src="/~lb768/3dapp/assignment/assets/images/home/extra/cocacolaCompany.png" alt="Coca-Cola Company">
                 
                 <div class="card-body">
                     <p class="card-text">The Coca-Cola Company, founded on January 29, 1892, in Atlanta, Georgia, United States, by Asa Griggs Candler, is renowned globally for its iconic soft drink, Coca-Cola. Originating as a patent medicine created by pharmacist John S. Pemberton in 1886, Coca-Cola rapidly grew into one of the world's largest beverage companies. Alongside Coca-Cola, the company produces and markets a diverse range of non-alcoholic beverages, distributed in over 200 countries and territories worldwide. With a strong commitment to sustainability, community engagement, and cultural impact, Coca-Cola remains a symbol of innovation, quality, and responsible business practices, shaping the beverage industry and leaving an indelible mark on global culture.</p>
@@ -85,13 +83,13 @@
                 
                 <div class="col-12 mb-3">
                     <div class="card rounded mx-auto shadow-sm"  style="background-color: white;">
-                        <img class="card-img-top" src="/3dapp/assets/images/home/extra/CokeHome.jpeg" alt="Coca-Cola Home">
+                        <img class="card-img-top" src="/~lb768/3dapp/assignment/assets/images/home/extra/CokeHome.jpeg" alt="Coca-Cola Home">
                     </div>
                 </div>
               
                 <div class="col-12">
                     <div class="card rounded mx-auto shadow-sm"  style="background-color: white;">
-                        <img class="card-img-top" src="/3dapp/assets/images/home/extra/FantaHome.png" alt="Fanta Home">
+                        <img class="card-img-top" src="/~lb768/3dapp/assignment/assets/images/home/extra/fantaHome.png" alt="Fanta Home">
                     </div>
                 </div>
             </div>
@@ -163,11 +161,11 @@
     
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootsrap Js -->
-    <script src="/~lb768/3dapp/assignment//3dapp/js/jquery-3.5.1.js"></script>
+    <script src="/~lb768/3dapp/assignment/js/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script>
-    <script src="/3dapp/js/navBar.js"></script>
+    <script src="/~lb768/3dapp/assignment/js/navBar.js"></script>
 
 </body>
 </html>

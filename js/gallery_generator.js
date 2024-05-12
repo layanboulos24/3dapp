@@ -25,7 +25,7 @@ var response;
 
 $(document).ready(function() {
 	// Set up the path to the PHP function that reads the image directory to find the thumbnail file names
-	var send = "/3dapp/application/view/hooks.php";
+	var send = "/~lb768/3dapp/assignment/application/view/hooks.php";
 	console.log(send);
 	// Open the connection to the web server
 	xmlHttp.open("GET", send, true);
@@ -35,16 +35,22 @@ $(document).ready(function() {
 	xmlHttp.onreadystatechange = function() {
 		if(xmlHttp.readyState == 4) {
 			// Response handler code
-			// alert(xmlHttp.responseText);
+			console.log(xmlHttp.responseText)
 			response = xmlHttp.responseText.split("~");
+			console.log(response.length);
 			// Loop round the response array
 			for (var i=0;i<response.length;i++) {
+				var url = response[i].trim();
+				// url = url.replace(/^~\//, '/');
+				// url = '/' + url
+
+				console.log(url)
 				// Handler to build the HTML string
 				// Use this to provide a link to the image
-				htmlCode += '<a href="'+ response[i] + ' " data-fancybox data-caption="My X3D model render" > ';
-				htmlCode += '<img class="card-img-top img-thumbnail galleryImages m-4" src="' + response[i] + '"/>';
+				htmlCode += '<a href="/~'+ url + ' " data-fancybox data-caption="My X3D model render" > ';
+				htmlCode += '<img class="card-img-top img-thumbnail galleryImages m-4" src="/~' + url + '"/>';
 				htmlCode += '</a>';	
-				console.log(response[i]);		
+				//console.log(response[i]);		
 			}
 			// Return the HTML string to each of the 4 3D App pages
 			document.getElementById('gallery').innerHTML = htmlCode;

@@ -12,13 +12,13 @@ class Controller {
 		$this->load = new Load(); 
 		$this->model = new Model();
 		// determine what page you are on
+
 		$this->$pageURI();
 	}
     // home page function
 	function home()
 	{
-		$data = $this->model->model3D_info();
-		$this->load->view('home', $data);
+		$this->load->view('home');
 	}
 
 	function apiCoke()
@@ -44,7 +44,7 @@ class Controller {
 
 	function apiCreateTable()
 	{
-	  	// echo "Create table function";
+	  	
 		$data = $this->model->dbCreateTable();
 		$this->load->view('viewMessage', $data);
 	}
