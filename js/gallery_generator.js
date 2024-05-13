@@ -41,9 +41,6 @@ $(document).ready(function() {
 			// Loop round the response array
 			for (var i=0;i<response.length;i++) {
 				var url = response[i].trim();
-				// url = url.replace(/^~\//, '/');
-				// url = '/' + url
-
 				console.log(url)
 				// Handler to build the HTML string
 				// Use this to provide a link to the image

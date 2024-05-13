@@ -12,7 +12,7 @@ class Controller {
 		$this->load = new Load(); 
 		$this->model = new Model();
 		// determine what page you are on
-
+		
 		$this->$pageURI();
 	}
     // home page function

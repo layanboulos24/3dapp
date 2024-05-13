@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- CHANGE URL PATH TO /~lb768/3dapp/assignment/3Dapp ..... -->
+<!-- CHANGE URL PATH TO /~lb768/3dapp/assignment/ ..... -->
 
 <head>
   <meta charset="UTF-8">
